@@ -34,7 +34,15 @@ const Header = () => {
             <span className="navbar-toggler-icon" />
           </button>
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <Link style={{color:"white",fontWeight:"bold",fontSize:"2rem"}} className="navbar-brand" to="https://kkhmechware.com/">
+            <Link style={{
+                color:"black",
+                fontWeight:"bold",
+                fontSize:"2rem",
+                border:"1px solid white",
+                width:"20rem",
+                backgroundColor:"grey",
+                borderColor:"grey"
+                }} className="navbar-brand" to="https://kkhmechware.com/">
               KKH Mechware
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">

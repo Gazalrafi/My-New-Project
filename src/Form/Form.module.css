@@ -2,13 +2,14 @@
     display: flex;
     justify-content: center;
     float: right;
-    max-width: 650px;
-    padding:28px;
-    margin:0 28px;
+    max-width:650px;
+    padding:20px;
+    margin:0 300px;
     border-radius: 10px;
     overflow: hidden;
     background:rgba(183, 184, 192, 0.955);
     box-shadow: 0 15px 20px rgba(0,0,0,3);
+    align-items: center !important;
 }
 
 .content{
@@ -16,6 +17,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding:20px 0;
+   
 }
 .input{
     display: flex;
@@ -49,4 +51,12 @@
 .container label{
     font-weight: bold;
     font-size: small;
+}
+.form h3{
+    margin:5px;
+    font-weight:bold;
+    border:2px solid rgba(25, 24, 24, 0.153);
+    padding:15px;
+    background-color: rgb(240, 236, 233);
+    box-shadow: 0 15px 20px rgba(0,0,0,0.4);
 }

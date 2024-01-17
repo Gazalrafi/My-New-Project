@@ -6,7 +6,7 @@ import Layout from '../Layout/Layout';
 
 const Form = () => {
   const navigate=useNavigate();
-  const [view,setView]=useState(false);
+  // const [view,setView]=useState(false);
   const [isManufacture,setIsManufacture]=useState(true);
   const [userData,setUserData]=useState({
 
@@ -23,7 +23,6 @@ const Form = () => {
    
   });
   
-    
     let name,value;
 
     const postUserData=(event)=>{
@@ -85,9 +84,9 @@ const Form = () => {
        console.log(error)
     }
     }
-    const visible=()=>{
-      setView(current=>!current);
-    }
+    // const visible=()=>{
+    //   setView(current=>!current);
+    // }
 
     const manufactureToggleHandler=()=>{
       setIsManufacture(current=>!current)
@@ -98,16 +97,17 @@ const Form = () => {
     <Layout>
       <div className={classes.details}>
           <h3>Supplier Management</h3>
-          <button onClick={visible} style={{marginTop:"3vh"}}>Add Your Details Here</button>
-          <button onClick={manufactureToggleHandler} className={classes.manufacture}>{isManufacture ? 'ManuFacture Entry' : 'Vendor Entry'}</button>
+          {/* <button onClick={visible} style={{marginTop:"3vh"}}>Supplier Information Form</button> */}
+          <button onClick={manufactureToggleHandler} className={classes.manufacture}>{isManufacture ? 'Click here for Vendor Entry' : 'Click here for Manufacturer Entry'}</button>
       </div>
-        {view && <div className={classes.container}>
+        <div className={classes.container}>
             <form className={classes.form} onSubmit={submitHandler}>
+             <h3>{isManufacture ? 'Manufacturer Entry(M00001)' : 'Vendor Entry(V00001)'}</h3>
               <div className={classes.content}>
               <div className={classes.input}>
                 <label>Category*</label>
                 <select 
-                style={{margin:"5px", height:"30px", width:"17rem",borderRadius:"5px",borderStyle:"none"}}
+                style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="category" value={userData.category} onChange={postUserData}>
                     <option value="manufacturer">Manufacturer</option>
                     <option value="vendor">Vendor</option>
@@ -115,7 +115,7 @@ const Form = () => {
               </div>
 
               <div className={classes.input}>
-                <label htmlFor='text'>Name*</label>
+                <label htmlFor='text'>{isManufacture?"Manufacture Name*":"Vendor Name*"}</label>
                 <input type='text' id='name' name="name"  value={userData.name} onChange={postUserData} />
               </div>
 
@@ -142,7 +142,7 @@ const Form = () => {
               <div className={classes.input}>
               <label>Country*</label>
                 <select 
-                style={{margin:"5px", height:"30px", width:"17rem",borderRadius:"5px",borderStyle:"none"}}
+                style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="country" value={userData.country} onChange={postUserData}>
                    <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
@@ -394,7 +394,7 @@ const Form = () => {
               <div className={classes.input}>
               <label>State*</label>
                 <select 
-                style={{margin:"5px", height:"30px", width:"17rem",borderRadius:"5px",borderStyle:"none"}}
+                style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="state" value={userData.state} onChange={postUserData}>
                     <option value="Andhra Pradesh">Andhra Pradesh</option>
                       <option value="Arunachal Pradesh">Arunachal Pradesh</option>
@@ -450,7 +450,7 @@ const Form = () => {
               Submit the details
             </button>
       </form>
-      </div>}
+      </div>
     </Layout>
     </>
   )
