@@ -5,13 +5,16 @@ import App from './App';
 // import "antd/dist/antd.min.css";
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
+import CategoryProvider from './store/CategoryProvider';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+<CategoryProvider>
     <BrowserRouter>
          <App/>
     </BrowserRouter>
+</CategoryProvider>
   </React.StrictMode>
 );
 

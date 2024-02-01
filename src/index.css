@@ -17,7 +17,8 @@ button{
   box-shadow: 0 15px 20px rgba(0,0,0,0.6);
 }
 .content {
-  height:110vh;
+  margin-top:55px;
+  height:auto;
 }
 
 

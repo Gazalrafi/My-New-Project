@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../Layout/Layout';
 import classes from './HomePage.module.css';
 import {Link }from 'react-router-dom';
+import Footer from '../Layout/Footer';
 const HomePage = () => {
   return (
     <>
@@ -14,6 +15,7 @@ const HomePage = () => {
             <Link  className={classes.home_link}> Reports</Link>
         </div>
     </Layout>
+    <Footer/>
     </>
   )
 }

@@ -1,0 +1,27 @@
+.supplier_page{
+    display:flex;
+    margin-top: 85px;
+  
+
+}
+ .supplier_page h3{
+   text-align: center;
+    height: 100px;
+    margin:15px;
+    padding: 25px;
+    font-weight:bold;
+    border:2px solid rgba(25, 24, 24, 0.153);
+   
+    background-color: rgb(181, 179, 177);
+    box-shadow: 0 15px 20px rgba(0,0,0,3);
+}
+.supplier_label{
+   
+    font-weight:bold;
+    border:2px solid rgba(25, 24, 24, 0.153);
+    padding:25px;
+    background-color: rgb(181, 179, 177);
+    box-shadow: 0 15px 20px rgba(0,0,0,3);
+    height:100px;
+    margin:15px;
+}

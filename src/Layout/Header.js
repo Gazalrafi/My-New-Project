@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-dark">
+      <nav className="navbar navbar-expand-lg bg-dark fixed-top" >
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -41,10 +41,12 @@ const Header = () => {
                 border:"1px solid white",
                 width:"20rem",
                 backgroundColor:"grey",
-                borderColor:"grey"
+                borderColor:"grey",
+                textAlign:"center"
                 }} className="navbar-brand" to="https://kkhmechware.com/">
               KKH Mechware
             </Link>
+            
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 {" "}
