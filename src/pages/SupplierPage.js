@@ -19,12 +19,19 @@ const SupplierPage = () => {
   return (
     <>
       <Layout>
+      <div className={classes.container}>
+      <h3 style={{marginTop:"80px",
+                textAlign: "center",
+                fontWeight:"bold",
+                border:"2px solid rgba(25, 24, 24, 0.153)",
+                padding:"15px",
+                backgroundColor: "rgb(181, 179, 177)",
+                boxShadow: "0 15px 20px rgba(0,0,0,3)",}}>Supplier Management</h3>
          <div className={classes.supplier_page}>
-           <h3>Supplier Management</h3>
            <div className={classes.supplier_label}>
               <label>Category*</label>
                     <select 
-                    style={{margin:"5px", height:"30px", width:"10.5rem",borderRadius:"5px",borderStyle:"none"}}
+                    style={{ height:"30px", width:"10.5rem",borderRadius:"5px",borderStyle:"none"}}
                     value={selected} onChange={(e)=>handleChange(e)}>
                       <option>choose category</option>
                       {categoryItemsCtx.category.map((item,ind)=>{
@@ -35,10 +42,13 @@ const SupplierPage = () => {
                     </select>
             </div>
             </div>
+            <div className={classes.components}>
             {selected==="manufacturer"?<ManufacturerForm/>:""}
             {selected === "vendor"?<VendorForm/>:""}
             {selected === "tier1"?<Tier1/>:""}
             {selected === "tier2"?<Tier2/>:""}
+            </div>
+            </div>
       </Layout>
     </>
   )

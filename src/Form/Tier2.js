@@ -41,7 +41,7 @@ const Tier2 = () => {
       const { category,name,email,contact,pid,pt,country,state,district,location,start_date,end_date,document}=userData;
     try{
      if(category && name && email && contact && pid && pt && country && state && district && location && start_date && end_date && document){
-     const res= await fetch("https://kkh-mechware-default-rtdb.firebaseio.com/userData.json",{
+     const res= await fetch("https://kkh-mechware-b4b32-default-rtdb.firebaseio.com/userData.json",{
         method:"POST",
         headers:{
             "Content-Type":"application/json",
@@ -106,7 +106,7 @@ const Tier2 = () => {
                 <select 
                 style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="category" value={userData.category} onChange={postUserData}>
-                    <option value="">Choose Your Category</option>
+                    <option value="">Select Your Category</option>
                     <option value="manufacturer">Manufacturer</option>
                     <option value="vendor">Vendor</option>
                     <option value="vendor">Tier1</option>
@@ -144,7 +144,8 @@ const Tier2 = () => {
                 <select 
                 style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="country" value={userData.country} onChange={postUserData}>
-                   <option value="Afghanistan">Afghanistan</option>
+                <option value="">Select Country</option>
+                <option value="Afghanistan">Afghanistan</option>
                 <option value="Åland Islands">Åland Islands</option>
                 <option value="Albania">Albania</option>
                 <option value="Algeria">Algeria</option>
@@ -396,7 +397,8 @@ const Tier2 = () => {
                 <select 
                 style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="state" value={userData.state} onChange={postUserData}>
-                    <option value="Andhra Pradesh">Andhra Pradesh</option>
+                      <option value="">Select State</option>
+                      <option value="Andhra Pradesh">Andhra Pradesh</option>
                       <option value="Arunachal Pradesh">Arunachal Pradesh</option>
                       <option value="Assam">Assam</option>
                       <option value="Bihar">Bihar</option>
@@ -459,9 +461,11 @@ const Tier2 = () => {
                   </div>
      
             </div>
+            <div className={classes.button_container}>
             <button >
               Submit the details
             </button>
+            </div>
       </form>
       </div>
     </>

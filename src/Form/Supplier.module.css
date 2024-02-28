@@ -8,16 +8,16 @@
  .suphome_link{
     display: flex;
     flex-direction: row;
-  justify-content: center;
-    padding: 40px;
+    justify-content: center;
     border:1px solid black;
     width:20rem;
     margin: 7px ;
-    padding:15px;
-    background-color:#3e5d97;
+    padding:8px;
+    background-color:rgb(62, 114, 143);
     color:white;
     border-style: none;
     font-weight: bold;
+    font-size: 12px;
   
  }
  .sup_home_link:hover{
@@ -37,16 +37,16 @@
     display: flex;
     justify-content: space around;
     font-size: 15px;
-    padding: 40px;
-    border:1px solid black;
+    border:1px solid rgb(220, 215, 215);
     width:40rem;
     margin: 7px ;
-    padding:15px;
-    background-color:#afafb0;
+    padding:8px;
+    background-color:whitesmoke;
     color:rgb(6, 6, 6);
-    border-style: none;
     text-decoration: none;
     font-weight: bold;
     text-align: center;
+    font-size: 12px;
+   
 
 }

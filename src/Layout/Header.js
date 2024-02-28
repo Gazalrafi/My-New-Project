@@ -40,7 +40,7 @@ const Header = () => {
                 fontSize:"2rem",
                 border:"1px solid white",
                 width:"20rem",
-                backgroundColor:"grey",
+                backgroundColor:"white",
                 borderColor:"grey",
                 textAlign:"center"
                 }} className="navbar-brand" to="https://kkhmechware.com/">
