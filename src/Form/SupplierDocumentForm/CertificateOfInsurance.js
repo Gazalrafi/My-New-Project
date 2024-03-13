@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-// import { categoryContext} from '../../store/CategoryProvider'
-import { useState } from 'react';
+import { categoryContext} from '../../store/CategoryProvider'
+import { useState,useContext } from 'react';
 import classes from '../Form.module.css'
 // import {message} from "antd";
 
@@ -9,8 +9,8 @@ import classes from '../Form.module.css'
 const CertificateOfInsurance = () => {
   
   const navigate=useNavigate();
-  
-  // const categoryItemsCtx=useContext(categoryContext);
+  const [selected, setSelected]=useState('');
+  const categoryItemsCtx=useContext(categoryContext);
   const [userData,setUserData]=useState([{
 
     document_name:"",
@@ -24,6 +24,13 @@ const CertificateOfInsurance = () => {
     authorized_signatures:""
    
   }]);
+
+  const handleChange=(e)=>{
+
+    console.log(e.target.value)
+    setSelected(e.target.value)
+
+  }
   
     let name,value;
 
@@ -109,9 +116,45 @@ const CertificateOfInsurance = () => {
                 <input type='number' name="policy_number" value={userData.policy_number} onChange={postUserData} />
               </div>
               <div className={classes.input}>
-                <label htmlFor='text'>Supplier Name*</label>
-                <input type='text' name="supplier_name" value={userData.supplier_name} onChange={postUserData}/>
+              <label>Supplier Category*</label>
+                    <select style={{margin:"5px", height:"30px", width:"17.8rem",borderRadius:"5px",borderStyle:"none",fontSize:"11px"}}
+                    name="supplier_category" value={selected} onChange={handleChange}>
+                      <option>Select Supplier Category</option>
+                      {categoryItemsCtx.category.map((item,ind)=>{
+                          return (
+                          <option key={ind}>{item.value}</option>)
+                      })}
+                        
+                    </select>
               </div>
+        
+              <div className={classes.input}>
+              <label>Supplier Name*</label>
+                    <select style={{margin:"5px", height:"30px", width:"17.8rem",borderRadius:"5px",borderStyle:"none",fontSize:"11px"}}
+                    name="supplier_name" value={userData.supplier_name} onChange={postUserData}>
+                      <option>Select Supplier Name</option>
+                      {selected==="manufacturer" ? categoryItemsCtx.manufactureData.map((item,ind)=>{
+                          return (
+                          <option key={ind}>{item.name}({item.category})</option>)
+                      }):""}
+
+                      {selected==="vendor" ? categoryItemsCtx.vendorData.map((item,ind)=>{
+                          return (
+                          <option key={ind}>{item.name}</option>)
+                      }):""}
+                      {selected==="tier1" ? categoryItemsCtx.tier1Data.map((item,ind)=>{
+                          return (
+                          <option key={ind}>{item.name}</option>)
+                      }):""}
+                      {selected==="tier2" ? categoryItemsCtx.tier2Data.map((item,ind)=>{
+                          return (
+                          <option key={ind}>{item.name}</option>)
+                      }):""}
+                        
+                        
+                    </select>
+              </div>
+              
         
               <div className={classes.input}>
                 <label htmlFor='text'>Insured Party*</label>

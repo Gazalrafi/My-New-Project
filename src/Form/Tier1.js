@@ -34,14 +34,17 @@ const Tier1 = () => {
          setUserData({...userData,[name]:value});
             
       }
+
+      let supplier_type=localStorage.getItem('tier1');
   
       const submitHandler = async(event)=>{
   
         event.preventDefault();
         const { category,name,email,contact,pid,pt,country,state,district,location,start_date,end_date,document}=userData;
       try{
+        let supplier_type="tier1"
        if(category && name && email && contact && pid && pt && country && state && district && location && start_date && end_date && document){
-       const res= await fetch("https://kkh-mechware-b4b32-default-rtdb.firebaseio.com/userData.json",{
+       const res= await fetch(`https://kkh-mechware-b4b32-default-rtdb.firebaseio.com/userData/${supplier_type}.json`,{
           method:"POST",
           headers:{
               "Content-Type":"application/json",
@@ -103,7 +106,9 @@ const Tier1 = () => {
               <div className={classes.content}>
               <div className={classes.input}>
                 <label>Category*</label>
-                <select 
+                <label>Supplier Category*</label>
+                <input type='text' name="category"  value={supplier_type} onChange={postUserData} />
+                {/* <select 
                 style={{margin:"5px", height:"30px", width:"18rem",borderRadius:"5px",borderStyle:"none"}}
                 name="category" value={userData.category} onChange={postUserData}>
                     <option value="">Select Your Category</option>
@@ -111,7 +116,7 @@ const Tier1 = () => {
                     <option value="vendor">Vendor</option>
                     <option value="vendor">Tier1</option>
                     <option value="vendor">Tier2</option>
-                </select>
+                </select> */}
               </div>
 
               <div className={classes.input}>
@@ -131,7 +136,7 @@ const Tier1 = () => {
         
               <div className={classes.input}>
                 <label htmlFor='text'>Product ID*</label>
-                <input type='text' id='pid' name="pid" value={userData.pid} onChange={postUserData}/>
+                <input type='number' id='pid' name="pid" value={userData.pid} onChange={postUserData}/>
               </div>
 
               <div className={classes.input}>

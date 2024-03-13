@@ -3,7 +3,6 @@ import { categoryContext } from '../store/CategoryProvider';
 import { useContext, useState } from 'react';
 import SupplierContract from '../Form/SupplierDocumentForm/SupplierContract';
 import classes from './SupplierPage.module.css';
-import PurchaseOrder from '../Form/SupplierDocumentForm/PurchaseOrder';
 import Invoice from '../Form/SupplierDocumentForm/Invoice';
 import CertificateOfInsurance from '../Form/SupplierDocumentForm/CertificateOfInsurance';
 import ComplianceCertificate from '../Form/SupplierDocumentForm/ComplianceCertification';
@@ -45,7 +44,6 @@ const SupplierDocument = () => {
             </div>
             <div className={classes.components}>
             {selected==="supplier contract"?<SupplierContract/>:""}
-            {selected==="purchase order"?<PurchaseOrder/>:""}
             {selected==="invoice"?<Invoice/>:""}
             {selected==="certificate of insurance"?<CertificateOfInsurance/>:""}
             {selected==="compliance certificate"?<ComplianceCertificate/>:""}
